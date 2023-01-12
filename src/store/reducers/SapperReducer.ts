@@ -2,37 +2,74 @@ import {
     SapperAction,
     SapperActionTypes,
     SapperState
-} from "../../types/todo";
+} from "../../types/sapper";
 
 const initialState: SapperState = {
     sizeInfo: [
             {
                 id: 1,
                 name: "small",
-                countRows: 9,
-                countBombs: 10
+                numbersRows: 9,
+                numbersBombs: 10,
+                cssWidth: "288px",
             },
             {
                 id: 2,
                 name: "medium",
-                countRows: 16,
-                countBombs: 40
+                numbersRows: 16,
+                numbersBombs: 40,
+                cssWidth: "512px",
             },
             {
                 id: 3,
                 name: "large",
-                countRows: 22,
-                countBombs: 100
+                numbersRows: 22,
+                numbersBombs: 100,
+                cssWidth: "704px",
             },
     ],
-    choosedSize: [],
-
+    choosedSize: {
+        id: 1,
+        name: "small",
+        numbersRows: 9,
+        numbersBombs: 10,
+        cssWidth: "288px",
+    },
+    matrixInfo: {
+        numbersCells: null,
+        numbersEmptyCells: null,
+        numbersSafeNumbers: null,
+        numbersBombs: null,
+        matrix: [],
+        linearArray: [],
+    },
+    statusInfo: {
+        status: false,
+        startTime: null,
+        endTime: null,
+        elapsedTime: null,
+        user: null,
+        success: false,
+    }, 
 }
 
 export const SapperReducer = (state = initialState, action: SapperAction): SapperState => {
     switch (action.type) {
-        case SapperActionTypes.FORM_TOOLBAR:
-            return {sizeInfo: [], choosedSize: []};
+        case SapperActionTypes.SET_SIZE:
+            return {
+                ...state,
+                choosedSize: action.payload,
+            };
+        case SapperActionTypes.CHANGE_STATUS:
+            return {
+                ...state,
+                statusInfo: action.payload,
+            }
+        case SapperActionTypes.GENERATE_FIELD:
+            return {
+                ...state,
+                matrixInfo: action.payload,
+            }
         default:
             return state;
     }
