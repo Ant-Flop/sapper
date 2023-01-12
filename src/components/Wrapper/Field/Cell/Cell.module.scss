@@ -1,0 +1,21 @@
+.cell {
+    width: 30px;        
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #767676;
+}
+
+.cell:hover {
+    background: #e2dcdc;
+    cursor: pointer;
+}
+
+.bomb_img {
+    background-image: url("../../../../images/bomb.png") !important;
+    background-size: 30px 30px !important;
+    background-color: #e2e6ff !important;
+}
+
+.activated_cell {
+    background-color: #c5c5c5 !important;
+}
