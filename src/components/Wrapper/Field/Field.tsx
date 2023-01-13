@@ -16,7 +16,13 @@ export const Field: React.FC<any> = (props) => {
     }, [])
 
     const cells = props.matrixInfo.linearArray
-                  .map((element: any, index: number) => <Cell key= { index + 1} statusInfo = { props.statusInfo } valueCell = { element } index = { index + 1}/>)
+                  .map((element: any, index: number) => <Cell key= { index + 1} 
+                                                              statusInfo = { props.statusInfo } 
+                                                              valueCell = { element } 
+                                                              index = { index + 1}
+                                                              matrixInfo = { props.matrixInfo}
+                                                              choosedSize = {props.choosedSize}
+                                                              refArray = {ref}/>)
     
     return (
         <div ref = {ref} className={styles.field}>

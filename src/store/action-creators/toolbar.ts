@@ -8,7 +8,6 @@ export const setSize = (choosedSize: any) => {
 }
 
 export const changeStatus = (statusInfo: any) => {
-    console.log(statusInfo)
     return (dispatch: Dispatch<SapperAction>) => {
         dispatch({type: SapperActionTypes.CHANGE_STATUS, payload: statusInfo})
     }
