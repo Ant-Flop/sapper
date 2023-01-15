@@ -8,7 +8,7 @@ export const Wrapper: React.FC = () => {
     const {sizeInfo, choosedSize, statusInfo, matrixInfo} = useTypedSelector(state => state.sapper);
     return (
         <div className = { styles.wrapper }>
-            <Toolbar sizeInfo = {sizeInfo}/>
+            <Toolbar sizeInfo = {sizeInfo} matrixInfo = { matrixInfo }/>
             <Field choosedSize = {choosedSize} statusInfo = {statusInfo} matrixInfo = { matrixInfo }/>
         </div>
             

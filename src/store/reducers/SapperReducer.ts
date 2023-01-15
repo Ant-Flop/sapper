@@ -11,21 +11,21 @@ const initialState: SapperState = {
                 name: "small",
                 numbersRows: 9,
                 numbersBombs: 10,
-                cssWidth: "288px",
+                cssWidth: "243px",
             },
             {
                 id: 2,
                 name: "medium",
                 numbersRows: 16,
                 numbersBombs: 40,
-                cssWidth: "512px",
+                cssWidth: "432px",
             },
             {
                 id: 3,
                 name: "large",
                 numbersRows: 22,
                 numbersBombs: 100,
-                cssWidth: "704px",
+                cssWidth: "594px",
             },
     ],
     choosedSize: {
@@ -33,7 +33,7 @@ const initialState: SapperState = {
         name: "small",
         numbersRows: 9,
         numbersBombs: 10,
-        cssWidth: "288px",
+        cssWidth: "243px",
     },
     matrixInfo: {
         numbersCells: null,
@@ -50,6 +50,7 @@ const initialState: SapperState = {
         elapsedTime: null,
         user: null,
         success: false,
+        passageLinarArray: [],
     }, 
 }
 

@@ -15,7 +15,8 @@ export const Toolbar: React.FC<any> = (props) => {
             elapsedTime: null,
             user: "Anthony",
             success: false,
-        })
+            passageLinearArray: props.matrixInfo.linearArray
+        });
     }
 
     return (

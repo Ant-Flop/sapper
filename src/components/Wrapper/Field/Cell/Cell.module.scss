@@ -1,9 +1,10 @@
 .cell {
-    width: 30px;        
-    height: 30px;
+    width: 25px;        
+    height: 25px;
     background: #ffffff;
     border: 1px solid #767676;
     pointer-events: none;
+    text-align: center;
 }
 
 .cell:hover {
@@ -11,12 +12,24 @@
     cursor: pointer;
 }
 
-.bomb_img {
-    background-image: url("../../../../images/bomb.png") !important;
-    background-size: 30px 30px !important;
+.activated_number_cell {
+    background-color: #a0cdaf !important;
+    pointer-events: none;
+}
+
+.activated_empty_cell {
+    background-color: #c5c5c5 !important;
+    pointer-events: none;
+}
+
+.activated_mine_cell {
+    background-image: url("../../../../images/mine.png") !important;
+    background-size: 25px 25px !important;
     background-color: #e2e6ff !important;
 }
 
-.activated_cell {
-    background-color: #c5c5c5 !important;
+.flag {
+    background-image: url("../../../../images/flag.png") !important;
+    background-size: 25px 25px !important;
+    background-color: #e2e6ff !important;
 }

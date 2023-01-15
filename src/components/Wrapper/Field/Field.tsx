@@ -9,7 +9,7 @@ export const Field: React.FC<any> = (props) => {
     const ref = useRef(document.createElement("div"));
     ref.current.style.width = props.choosedSize.cssWidth;
 
-    const { createField} = useActions();
+    const { createField, changeStatus} = useActions();
 
     useEffect(() => {
         createField(props.choosedSize);
@@ -25,7 +25,7 @@ export const Field: React.FC<any> = (props) => {
                                                               refArray = {ref}/>)
     
     return (
-        <div ref = {ref} className={styles.field}>
+        <div ref = {ref} className={styles.field} onContextMenu = {(e) => {e.preventDefault()}}>
             { cells }
         </div>
     )
