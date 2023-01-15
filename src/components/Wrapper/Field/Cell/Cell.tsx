@@ -9,6 +9,15 @@ export const Cell = (props: any) => {
     const arrRefCells = [...props.refArray.current.childNodes];
 
     ref.current.style.pointerEvents = props.statusInfo.status ? "all" : "none";
+    if(props.statusInfo.success !== null)
+        if(props.statusInfo.success){
+            props.statusInfo.success = null;
+            alert("u win!");
+        }
+        else {
+            props.statusInfo.success = null;
+            alert("u lost!");
+        }
 
     const determineIndexes = (linearIndex: number, numbersRows: number) => {
         let indexRow = Math.floor(linearIndex / numbersRows);
@@ -186,7 +195,7 @@ export const Cell = (props: any) => {
     }
 
     const checkPassageGame = (passageLinearArray: any) => {
-        if(passageLinearArray.filter((element: any) => (element === 0 || element > 0)).length === 
+        if(passageLinearArray.filter((element: any) => (element === 0)).length === 
            arrRefCells.filter((element: any) => element.classList.contains(styles.activated_empty_cell)).length)
             return true;
         else return false;
@@ -206,7 +215,15 @@ export const Cell = (props: any) => {
                         ref.current.classList.add(styles.activated_empty_cell);
                         openEmptyCells(props.index - 1, props.choosedSize.numbersRows, props.matrixInfo.matrix, props.statusInfo.passageLinearArray);
                         if(checkPassageGame(props.statusInfo.passageLinearArray))
-                            alert("u win!")
+                            changeStatus({
+                                status: false,
+                                startTime: props.statusInfo.startTime,
+                                endTime: new Date(),
+                                elapsedTime: null,
+                                user: props.statusInfo.user,
+                                success: true,
+                                passageLinearArray: props.statusInfo.passageLinearArray,
+                            });
                         break;
                     case true: 
                         ref.current.classList.add(styles.activated_mine_cell);
